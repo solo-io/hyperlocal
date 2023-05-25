@@ -12,7 +12,9 @@ edition = "2018"
 
 [dependencies]
 hex = "0.4"
-hyper = "0.14"
+hyper = "1.0.0-rc.3"
+hyper-util = { git = "https://github.com/hyperium/hyper-util", rev = "0121482"  }
+tower = "0.4.13"
 tokio = { version = "1.0", features = ["net"] }
 pin-project-lite = "0.2"
 
@@ -22,8 +24,8 @@ tokio = { version = "1.0", features = ["io-std", "io-util", "macros", "rt-multi-
 [features]
 default = []
 client = [
-    "hyper/client",
-    "hyper/http1",
+    "hyper-util/client",
+    "hyper-util/http1",
 ]
 server = [
     "hyper/http1",
@@ -32,12 +34,12 @@ server = [
 
 [[example]]
 name = "client"
-required-features = ["client", "hyper/runtime"]
+required-features = ["client", "hyper-util/runtime"]
 
 [[example]]
 name = "server"
-required-features = ["server", "hyper/runtime"]
+required-features = ["server", "hyper-util/runtime"]
 
 [[test]]
 name = "server_client"
-required-features = ["client", "server", "hyper/runtime"]
+required-features = ["client", "server-util", "hyper/runtime"]
