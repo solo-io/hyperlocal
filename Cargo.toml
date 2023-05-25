@@ -13,7 +13,7 @@ edition = "2018"
 [dependencies]
 hex = "0.4"
 hyper = "1.0.0-rc.3"
-hyper-util = { git = "https://github.com/hyperium/hyper-util", rev = "0121482"  }
+hyper-util = { git = "https://github.com/howardjohn/hyper-util", branch = "h2-timer-expose-exec", features = ["full"] }
 tower = "0.4.13"
 tokio = { version = "1.0", features = ["net"] }
 pin-project-lite = "0.2"
